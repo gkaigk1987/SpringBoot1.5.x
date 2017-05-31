@@ -12,8 +12,12 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
 	</parent>
+	<!-- 整合thymeleaf -->
+	<properties>
+		<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
+		<thymeleaf-layout-dialect.version>2.1.1</thymeleaf-layout-dialect.version>
+	</properties>
 	<dependencies>
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -23,6 +27,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		
 		<!-- springboot 测试使用 -->
@@ -91,12 +100,10 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<includes>
-					<include>**/*.properties</include>
-					<include>**/*.xml</include>
+					<include>**/*</include>
 				</includes>
-				<filtering>false</filtering>
 			</resource>
-		</resources>
+		</resources> 
 		<plugins>
 			<!-- MyBatis代码生成器 Eclispe中Maven运行命令mybatis-generator:generate -->
 			<plugin>
@@ -141,6 +148,11 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<!-- SpringBoot打包插件 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
