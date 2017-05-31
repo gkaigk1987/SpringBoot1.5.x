@@ -1,0 +1,7 @@
+#测试使用@ConfigurationProperties加载YAML文件(springboot1.4后无法自动加载application.yml文件)
+#测试未成功
+mytest:
+  name: gk
+  listProp: 
+    - yqq
+    - gk
