@@ -8,5 +8,7 @@ public interface IUserService {
 	
 	public List<User> getAllUsers();
 	
+	public User getUserById(String id);
+	
 
 }

@@ -21,4 +21,9 @@ public class UserService implements IUserService {
 		return userMapper.selectByExample(new UserExample());
 	}
 
+	@Override
+	public User getUserById(String id) {
+		return userMapper.selectByPrimaryKey(id);
+	}
+
 }
