@@ -26,5 +26,6 @@ public class UserService implements IUserService {
 		User user = userMapper.selectByPrimaryKey(userId);
 		return user;
 	}
+	
 
 }
