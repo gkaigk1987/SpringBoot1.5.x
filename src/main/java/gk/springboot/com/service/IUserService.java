@@ -3,6 +3,7 @@ package gk.springboot.com.service;
 import java.util.List;
 
 import gk.springboot.com.model.User;
+import gk.springboot.com.model.UserExample;
 
 public interface IUserService {
 	
@@ -10,5 +11,5 @@ public interface IUserService {
 	
 	public User getUserById(String id);
 	
-
+	public List<User> getUsersByExample(UserExample example);
 }

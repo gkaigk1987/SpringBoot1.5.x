@@ -21,6 +21,8 @@ import gk.springboot.com.mapper.UserMapper;
 import gk.springboot.com.model.User;
 import gk.springboot.com.model.UserExample;
 import gk.springboot.com.property.MyTestYml;
+import gk.springboot.com.service.IUserService;
+import gk.springboot.com.service.MailService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -33,6 +35,12 @@ public class BootTest {
 
 	@Autowired
 	private UserMapper userMapper;
+	
+	@Autowired
+	private IUserService userService;
+	
+	@Autowired
+	private MailService mailService;
 
 	@Test
 	public void test01() {
@@ -62,6 +70,26 @@ public class BootTest {
 		user.setPassword("123456");
 		userMapper.insertSelective(user);
 		throw new RuntimeException();
+	}
+	
+	@Test
+	public void test04() {
+		mailService.sendSimpleMail("gkaigk@126.com", "测试", "测试邮件内容");
+	}
+	
+	@Test
+	public void test05() {
+		for(int i = 0; i < 2; i++) {
+			mailService.sendHtmlMail("gkaigk@126.com", "测试HTML", "测试邮件内容<br/>换行显示：<a>www.baidu.com</a>");
+		}
+	}
+	
+	@Test
+	public void test06() {
+		UserExample example = new UserExample();
+		example.createCriteria().andAgeEqualTo(30);
+		List<User> users = userService.getUsersByExample(example);
+		System.out.println(users==null);
 	}
 
 }

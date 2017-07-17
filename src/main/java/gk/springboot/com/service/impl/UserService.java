@@ -26,4 +26,10 @@ public class UserService implements IUserService {
 		return userMapper.selectByPrimaryKey(id);
 	}
 
+	@Override
+	public List<User> getUsersByExample(UserExample example) {
+		List<User> users = userMapper.selectByExample(example);
+		return users;
+	}
+
 }
