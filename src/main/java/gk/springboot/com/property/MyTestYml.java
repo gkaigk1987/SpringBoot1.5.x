@@ -14,7 +14,8 @@ import org.springframework.stereotype.Component;
  * 2017年5月26日 下午3:56:19
  */
 @Component
-@ConfigurationProperties(prefix="mytest")
+@ConfigurationProperties(prefix="mytest")//该注解配置需要配合@EnableConfigurationProperties使用，1.5后取消了location属性
+//@PropertySource(value="classpath:/config/conf.yml")
 public class MyTestYml {
 	
 	private String name;
