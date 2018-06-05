@@ -20,7 +20,7 @@ import com.github.pagehelper.PageInfo;
 import gk.springboot.com.mapper.UserMapper;
 import gk.springboot.com.model.User;
 import gk.springboot.com.model.UserExample;
-import gk.springboot.com.property.MyTestYml;
+import gk.springboot.com.property.MyConfiguration;
 import gk.springboot.com.service.IUserService;
 import gk.springboot.com.service.MailService;
 
@@ -31,7 +31,7 @@ public class BootTest {
 	private static final Logger log = LoggerFactory.getLogger(BootTest.class);
 
 	@Autowired
-	private MyTestYml myTestYml;
+	private MyConfiguration myConfiguration;
 
 	@Autowired
 	private UserMapper userMapper;
@@ -44,11 +44,7 @@ public class BootTest {
 
 	@Test
 	public void test01() {
-		System.out.println(myTestYml.getName());
-		List<String> listProp = myTestYml.getListProp();
-		for (String string : listProp) {
-			System.out.println(string);
-		}
+		System.out.println(myConfiguration.getName());
 	}
 
 	@Test

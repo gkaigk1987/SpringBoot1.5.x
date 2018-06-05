@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import gk.springboot.com.property.MyConfiguration;
 import gk.springboot.com.service.IUserService;
 
 @Controller
@@ -18,10 +19,14 @@ public class TestController {
 	@Autowired
 	private IUserService userService;
 	
+	@Autowired
+	private MyConfiguration MyConfiguration;
+	
 	@RequestMapping(value = "/index")
 	public String testHtml(Model model) {
 		userService.getAllUsers();
 		model.addAttribute("name", "gk");
+		System.out.println(MyConfiguration.getName());
 		return "test/index";
 	}
 	
