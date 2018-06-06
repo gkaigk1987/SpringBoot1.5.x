@@ -34,7 +34,7 @@ public class BaseDataSourceConfiguration implements EnvironmentAware {
 		dataSource.setDriverClassName(propertyResolver.getProperty("driverClassName"));
 		dataSource.setUsername(propertyResolver.getProperty("username"));
 		dataSource.setPassword(propertyResolver.getProperty("password"));
-		dataSource.setFilters(propertyResolver.getProperty("filter"));
+		dataSource.setFilters(propertyResolver.getProperty("filters"));
 		dataSource.setMaxActive(propertyResolver.getProperty("maxActive", Integer.class));
 		dataSource.setInitialSize(propertyResolver.getProperty("initialSize", Integer.class));
 		dataSource.setMinIdle(propertyResolver.getProperty("minIdle", Integer.class));

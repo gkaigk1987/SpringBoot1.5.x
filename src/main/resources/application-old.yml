@@ -1,4 +1,4 @@
-spring:
+spring: 
   thymeleaf: 
     cache: false
     mode: html
@@ -6,24 +6,24 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
     
-  datasource:
+  datasource: 
     url: jdbc:mysql://localhost:3306/test?autoReconnect=true&failOverReadOnly=false
     username: root
     password: gkaigk1987
     driver-class-name: com.mysql.jdbc.Driver
-    filter: stat
-    maxActive: 100
-    initialSize: 10
-    minIdle: 1
+#    filter: stat
+#    maxActive: 100
+#    initialSize: 10
+#    minIdle: 1
 
-mybatis:
+mybatis: 
   mapper-locations: classpath:/gk/springboot/com/mapper/*.xml
   type-aliases-package: gk.springboot.com.model
   
-server:
+server: 
   port: 8088
   
-logging:
+logging: 
   level: 
     gk.springboot.com: debug
     org.springframework: off
