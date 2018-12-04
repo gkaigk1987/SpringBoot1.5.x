@@ -27,6 +27,7 @@ public class TestController {
 		userService.getAllUsers();
 		model.addAttribute("name", "gk");
 		System.out.println(MyConfiguration.getName());
+		logger.info("日志测试");
 		return "test/index";
 	}
 	

@@ -45,6 +45,7 @@ public class BootTest {
 	@Test
 	public void test01() {
 		System.out.println(myConfiguration.getName());
+		System.out.println(myConfiguration.getClientName());
 	}
 
 	@Test

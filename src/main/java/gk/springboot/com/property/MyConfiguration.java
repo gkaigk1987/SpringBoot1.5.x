@@ -1,7 +1,6 @@
 package gk.springboot.com.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +20,9 @@ public class MyConfiguration {
 	private String name;
 	
 	private Integer age;
-
+	
+	private String clientName;
+	
 	public String getName() {
 		return name;
 	}
@@ -37,5 +38,12 @@ public class MyConfiguration {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-	
+
+	public String getClientName() {
+		return clientName;
+	}
+
+	public void setClientName(String clientName) {
+		this.clientName = clientName;
+	}
 }
